@@ -35,7 +35,7 @@ public:
 
 		printf("You are at the %s\n%s\n", livingroom, description_livingroom);
 	}
-	void lookLivingRoom(string command){
+	void lookLivingRoom(string command){ //depenent de que ha posat sortira una cosa o una altre
 
 		if (command == "look"){
 			printf("%s\n", look_livingroom);
@@ -49,8 +49,8 @@ public:
 		else if (command == "look north" || command == "look west"){
 			printf("You are looking to a wall\n");
 		}
-	}
-	char* exitLivingRoom(string direction){
+	} 
+	char* exitLivingRoom(string direction){ //depenent de on trii anar, sortira una cosa o una altre
 
 		if (direction == "go north"|| direction=="go west"){
 			return noway;

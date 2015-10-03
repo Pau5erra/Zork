@@ -27,10 +27,10 @@ int main(){
 			printf("GoodBye\n");
 			return 0;
 		}
-		else if (command == "look" || command=="look east" || command=="look south" || command=="look north" || command=="look west"){ 
+		else if (command == "look" || command=="look east" || command=="look south" || command=="look north" || command=="look west"){ //Quan vulgui mirar el que hi ha
 			r.lookLivingRoom(command);
 		}
-		else if (command == "go north" || command == "go east" || command == "go west" || command == "go south"){
+		else if (command == "go north" || command == "go east" || command == "go west" || command == "go south"){//Quan vulgui anar a algun lloc
 			if (r.exitLivingRoom(command) == "No Way"){
 				printf("No way\n");
 			}
