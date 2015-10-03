@@ -1,6 +1,6 @@
-#include "Room.h"
+#include "LivingRoom.h"
 
-struct Exit{
+class Exit{
 
 	bool north = true;
 	bool east = true;
