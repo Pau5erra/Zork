@@ -32,6 +32,15 @@ public:
 			printf("%s\n", look_kitchen);
 		}
 	}
+	char* exitKitchen(string direction){ //depenent de on trii anar, sortira una cosa o una altre
+
+		if (direction == "go east" || direction == "go north" || direction =="go south"){
+			return "Nothing";
+		}
+		else if (direction == "go west"){
+			return "LIVINGROOM";
+		}
+	}
 };
 
 #endif

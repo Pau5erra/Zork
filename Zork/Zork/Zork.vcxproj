@@ -67,7 +67,7 @@
     <ClCompile Include="Zork.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Exit.h" />
+    <ClInclude Include="RoomFather.h" />
     <ClInclude Include="Forest.h" />
     <ClInclude Include="Kitchen.h" />
     <ClInclude Include="LivingRoom.h" />

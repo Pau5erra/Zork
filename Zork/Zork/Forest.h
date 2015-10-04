@@ -26,5 +26,15 @@ public:
 			printf("%s\n", look_forest);
 		}
 	}
+	char* exitForest(string direction){ //depenent de on trii anar, sortira una cosa o una altre
+
+		if (direction == "go east" || direction == "go west" || direction == "go south"){
+
+			return "Nothing";
+		}
+		else if (direction == "go north"){
+			return "LIVINGROOM";
+		}
+	}
 };
 #endif

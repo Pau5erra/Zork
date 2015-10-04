@@ -53,13 +53,13 @@ public:
 	char* exitLivingRoom(string direction){ //depenent de on trii anar, sortira una cosa o una altre
 
 		if (direction == "go north"|| direction=="go west"){
-			return noway;
+			return "Nothing";
 		}
 		else if (direction == "go east"){
-			return east_livingroom;
+			return "KITCHEN";
 		}
 		else if (direction == "go south"){
-			return south_livingroom;
+			return "FOREST";
 		}
 	}
 
