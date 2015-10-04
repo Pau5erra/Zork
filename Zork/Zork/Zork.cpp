@@ -6,21 +6,21 @@ using namespace std;
 
 int main(){
 	string command; //aquesta variable és on es guarda el que posa l'usuari
-	RoomFather RF;
-	RF.setInfo();//Es posa tota la informació de les classes
-	RF.setRoomState("LIVINGROOM");
+	Room R;
+	R.setInfo();//Es posa tota la informació de les classes
+	R.setRoomState("LIVINGROOM");
 	
 	printf("Hello to my Zork\n");
 
 	while (true){
-		if (RF.getRoomState() == "LIVINGROOM"){
-			RF.getInfoLivingRoom();
+		if (R.getRoomState() == "LIVINGROOM"){
+			R.getInfoLivingRoom();
 		}
-		else if (RF.getRoomState() == "KITCHEN"){
-			RF.getInfoKitchen();
+		else if (R.getRoomState() == "KITCHEN"){
+			R.getInfoKitchen();
 		}
-		else if (RF.getRoomState() == "FOREST"){
-			RF.getInfoForest();
+		else if (R.getRoomState() == "FOREST"){
+			R.getInfoForest();
 		}
 		while (true){
 
@@ -32,39 +32,39 @@ int main(){
 				return 0;
 			}
 			else if (command == "look" || command == "look east" || command == "look south" || command == "look north" || command == "look west"){ //Quan vulgui mirar el que hi ha
-				if (RF.getRoomState() == "LIVINGROOM"){//Comprova a l'habitació que està, depenent de quina estigui, executara un codi o un altre
+				if (R.getRoomState() == "LIVINGROOM"){//Comprova a l'habitació que està, depenent de quina estigui, executara un codi o un altre
 
-					RF.lookLivingRoom(command);
+					R.lookLivingRoom(command);
 				}
-				else if (RF.getRoomState() == "FOREST"){
-					RF.lookForest(command);
+				else if (R.getRoomState() == "FOREST"){
+					R.lookForest(command);
 				}
-				else if (RF.getRoomState() == "KITCHEN"){
-					RF.lookKitchen(command);
+				else if (R.getRoomState() == "KITCHEN"){
+					R.lookKitchen(command);
 				}
 			}
 			else if (command == "go north" || command == "go east" || command == "go west" || command == "go south"){//Quan vulgui anar a algun lloc
-				if (RF.getRoomState() == "LIVINGROOM"){
-					if (RF.exitLivingRoom(command) != "NOTHING"){
-						RF.setRoomState(RF.exitLivingRoom(command));
+				if (R.getRoomState() == "LIVINGROOM"){
+					if (R.exitLivingRoom(command) != "NOTHING"){
+						R.setRoomState(RF.exitLivingRoom(command));
 						break;
 					}
 				printf("No Way\n");
 
 				}
 
-				else if (RF.getRoomState() == "KITCHEN"){
-				if (RF.exitKitchen(command) != "NOTHING"){
-						RF.setRoomState(RF.exitKitchen(command));
+				else if (R.getRoomState() == "KITCHEN"){
+				if (R.exitKitchen(command) != "NOTHING"){
+						R.setRoomState(R.exitKitchen(command));
 						break;
 					}
 
 				printf("No Way\n");
 
 				}
-				else if (RF.getRoomState() == "FOREST"){
-					if (RF.exitForest(command) != "NOTHING"){
-						RF.setRoomState(RF.exitForest(command));
+				else if (R.getRoomState() == "FOREST"){
+					if (R.exitForest(command) != "NOTHING"){
+						R.setRoomState(R.exitForest(command));
 						break;
 					}
 
