@@ -28,10 +28,11 @@ int main(){
 
 			if (command == "quit"){
 				printf("GoodBye\n");
+				system("PAUSE");
 				return 0;
 			}
 			else if (command == "look" || command == "look east" || command == "look south" || command == "look north" || command == "look west"){ //Quan vulgui mirar el que hi ha
-				if (RF.getRoomState() == "LIVINGROOM"){
+				if (RF.getRoomState() == "LIVINGROOM"){//Comprova a l'habitació que està, depenent de quina estigui, executara un codi o un altre
 
 					RF.lookLivingRoom(command);
 				}
@@ -44,32 +45,31 @@ int main(){
 			}
 			else if (command == "go north" || command == "go east" || command == "go west" || command == "go south"){//Quan vulgui anar a algun lloc
 				if (RF.getRoomState() == "LIVINGROOM"){
-					if (RF.exitLivingRoom(command) == "Nothing"){
-						printf("No Way\n");
-					}
-					else if (RF.exitLivingRoom(command) != "Nothing"){
+					if (RF.exitLivingRoom(command) != "NOTHING"){
 						RF.setRoomState(RF.exitLivingRoom(command));
 						break;
 					}
-					
+				printf("No Way\n");
+
 				}
+
 				else if (RF.getRoomState() == "KITCHEN"){
-					if (RF.exitKitchen(command) == "Nothing"){
-						printf("No Way\n");
-					}
-					else if (RF.exitKitchen(command) != "Nothing"){
+				if (RF.exitKitchen(command) != "NOTHING"){
 						RF.setRoomState(RF.exitKitchen(command));
 						break;
 					}
+
+				printf("No Way\n");
+
 				}
 				else if (RF.getRoomState() == "FOREST"){
-					if (RF.exitForest(command) == "Nothing"){
-						printf("No Way\n");
-					}
-					else if (RF.exitForest(command) != "Nothing"){
+					if (RF.exitForest(command) != "NOTHING"){
 						RF.setRoomState(RF.exitForest(command));
 						break;
 					}
+
+				printf("No Way\n");
+
 				}
 			}
 

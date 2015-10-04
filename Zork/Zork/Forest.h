@@ -30,7 +30,7 @@ public:
 
 		if (direction == "go east" || direction == "go west" || direction == "go south"){
 
-			return "Nothing";
+			return "NOTHING";
 		}
 		else if (direction == "go north"){
 			return "LIVINGROOM";

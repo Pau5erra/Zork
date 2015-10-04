@@ -2,7 +2,7 @@
 #include "Kitchen.h"
 #include "Forest.h"
 
-class RoomFather : public Kitchen , public LivingRoom , public Forest //hereda tots els mètodes de les altres habitacions
+class RoomFather : public Kitchen , public LivingRoom , public Forest //hereda toooots els mètodes de les altres habitacions
 {
 private:
 
@@ -10,17 +10,17 @@ private:
 
 public:
 
-	void setInfo(){
+	void setInfo(){ //carrega la info de totes les classes
 
 		setInfoLivingRoom();
 		setInfoForest();
 		setInfoKitchen();
 
 	}
-	void setRoomState(char* next_room){
+	void setRoomState(char* next_room){ //Per canviar d'habitació
 		room_state = next_room;
 	}
-	char* getRoomState(){
+	char* getRoomState(){ //Et diu l'habitació que estas actualment
 
 		return room_state;
 	}
