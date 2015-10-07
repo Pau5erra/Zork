@@ -2,7 +2,7 @@
 #include "Kitchen.h"
 #include "Forest.h"
 
-class RoomFather : public Kitchen , public LivingRoom , public Forest //hereda toooots els mètodes de les altres habitacions
+class Room : public Kitchen , public LivingRoom , public Forest //hereda toooots els mètodes de les altres habitacions
 {
 private:
 
