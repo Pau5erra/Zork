@@ -14,6 +14,8 @@ private:
 	char* noway;
 	char* east_livingroom;
 	char* south_livingroom;
+	char* helmet_description;
+	char* sofa_description;
 
 public:
 
@@ -21,7 +23,7 @@ public:
 	void setInfoLivingRoom(){ 
 
 		livingroom = "Living Room";
-		description_livingroom = "You can see some clothes on the floor and a sofa";
+		description_livingroom = "You can see a helmet on the floor and a sofa";
 		look_livingroom = "You see a door on the east and a window on the south";
 		look_east_livingroom = "There's a door on the east";
 		look_south_livingroom = "There's a window on the south";
@@ -29,6 +31,9 @@ public:
 
 		east_livingroom = "East";
 		south_livingroom = "South";
+
+		helmet_description = "The helmet seems broken but usable";
+		sofa_description = "Brand new sofa is waiting for someone to sit";
 	}
 
 	void getInfoLivingRoom(){
@@ -62,6 +67,13 @@ public:
 			return "FOREST";
 		}
 	}
-
+	void lookObjectsLivingRoom(string command){
+		if (command == "look sofa"){
+			printf("%s\n", sofa_description);
+		}
+		else if (command == "look helmet"){
+			printf("%s\n", helmet_description);
+		}
+	}
 };
 #endif

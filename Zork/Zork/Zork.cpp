@@ -1,12 +1,16 @@
 #include <iostream>
 #include <string>
-#include "RoomFather.h"
+#include "Room.h"
+#include "Look.h"
+#include "Exit.h"
 
 using namespace std;
 
 int main(){
 	string command; //aquesta variable és on es guarda el que posa l'usuari
 	Room R;
+	Look L;
+	Exit E;
 	R.setInfo();//Es posa tota la informació de les classes
 	R.setRoomState("LIVINGROOM");
 	
@@ -31,7 +35,7 @@ int main(){
 				system("PAUSE");
 				return 0;
 			}
-			else if (command == "look" || command == "look east" || command == "look south" || command == "look north" || command == "look west"){ //Quan vulgui mirar el que hi ha
+			else if (L.commandLook(command)){ //Quan vulgui mirar el que hi ha
 				if (R.getRoomState() == "LIVINGROOM"){//Comprova a l'habitació que està, depenent de quina estigui, executara un codi o un altre
 
 					R.lookLivingRoom(command);
@@ -43,10 +47,18 @@ int main(){
 					R.lookKitchen(command);
 				}
 			}
-			else if (command == "go north" || command == "go east" || command == "go west" || command == "go south"){//Quan vulgui anar a algun lloc
+			else if (command == "look helmet" || command == "look sofa" || command=="look knife"){
+				if (R.getRoomState() == "LIVIGROOM"){
+					R.lookObjectsLivingRoom(command);
+				}
+				else if (R.getRoomState() == "KITCHEN"){
+					R.lookObjectsKitchen(command);
+				}
+			}
+			else if (E.commandGo(command)){//Quan vulgui anar a algun lloc
 				if (R.getRoomState() == "LIVINGROOM"){
 					if (R.exitLivingRoom(command) != "NOTHING"){
-						R.setRoomState(RF.exitLivingRoom(command));
+						R.setRoomState(R.exitLivingRoom(command));
 						break;
 					}
 				printf("No Way\n");

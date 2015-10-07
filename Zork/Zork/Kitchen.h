@@ -12,6 +12,8 @@ private:
 
 	char* west_kitchen;
 
+	char* description_knife;
+
 public:
 	void setInfoKitchen(){
 
@@ -20,6 +22,8 @@ public:
 		look_kitchen = "There's somthing under the table";
 
 		west_kitchen = "West";
+
+		description_knife = "A sharp knife is waiting to kill somebody\n";
 	}
 	void getInfoKitchen(){
 
@@ -39,6 +43,11 @@ public:
 		}
 		else if (direction == "go west"){
 			return "LIVINGROOM";
+		}
+	}
+	void lookObjectsKitchen(string command){
+		if (command == "look knife"){
+			printf("%s\n", description_knife);
 		}
 	}
 };
