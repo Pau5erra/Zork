@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClInclude Include="Exit.h" />
     <ClInclude Include="Look.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Forest.h" />
     <ClInclude Include="Kitchen.h" />

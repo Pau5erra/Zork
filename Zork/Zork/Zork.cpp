@@ -3,15 +3,18 @@
 #include "Room.h"
 #include "Look.h"
 #include "Exit.h"
+#include "Object.h"
 
 using namespace std;
 
 int main(){
 	string command; //aquesta variable és on es guarda el que posa l'usuari
 	Room R;
+	Object O;
 	Look L;
 	Exit E;
 	R.setInfo();//Es posa tota la informació de les classes
+	O.setObjects();
 	R.setRoomState("LIVINGROOM");
 	
 	printf("Hello to my Zork\n");
@@ -47,7 +50,7 @@ int main(){
 					R.lookKitchen(command);
 				}
 			}
-			else if (command == "look helmet" || command == "look sofa" || command=="look knife"){
+			else if (L.commandLookObject(command)){
 				if (R.getRoomState() == "LIVIGROOM"){
 					R.lookObjectsLivingRoom(command);
 				}
@@ -84,7 +87,18 @@ int main(){
 
 				}
 			}
+			else if (O.commandTakeObject(command)){//Quan vulgui agafar un objecte
+				O.TakeObject(command);
+			}
+			else if (command == "inventory"){//Per mirar inventory
+				O.lookInventory();
+			}
 
+			else if (O.commandDropObject(command)){//Quan vulgui deixar un objecte
+			
+				O.dropObject(command);
+
+			}
 			else{
 				printf("Command Error\n");
 			}

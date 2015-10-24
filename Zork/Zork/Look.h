@@ -11,7 +11,14 @@ public:
 			return false;
 		}
 	}
-
+	bool commandLookObject(string command){
+		if (command == "look helmet" || command == "look sofa" || command == "look knife"){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 
 
 };
