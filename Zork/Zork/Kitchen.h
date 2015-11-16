@@ -6,13 +6,13 @@ using namespace std;
 
 class Kitchen{
 private:
-	char* kitchen;
-	char* description_kitchen;
-	char* look_kitchen;
+	const char* kitchen;
+	const char* description_kitchen;
+	const char* look_kitchen;
 
-	char* west_kitchen;
+	const char* west_kitchen;
 
-	char* description_knife;
+	const char* description_knife;
 
 public:
 	void setInfoKitchen(){

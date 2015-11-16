@@ -3,7 +3,7 @@ private:
 	bool food;
 	bool knife;
 	bool helmet;
-	char* inventory;
+
 
 public:
 	void setObjects(){

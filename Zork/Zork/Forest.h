@@ -6,9 +6,9 @@ using namespace std;
 
 class Forest{
 private:
-	char* forest;
-	char* description_forest;
-	char* look_forest;
+	const char* forest;
+	const char* description_forest;
+	const char* look_forest;
 public:
 
 	void setInfoForest(){

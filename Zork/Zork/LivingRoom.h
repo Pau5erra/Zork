@@ -6,16 +6,16 @@ using namespace std;
 
 class LivingRoom{
 private:
-	char* livingroom;
-	char* description_livingroom;
-	char* look_livingroom;
-	char* look_east_livingroom;
-	char* look_south_livingroom;
-	char* noway;
-	char* east_livingroom;
-	char* south_livingroom;
-	char* helmet_description;
-	char* sofa_description;
+	const char* livingroom;
+	const char* description_livingroom;
+	const char* look_livingroom;
+	const char* look_east_livingroom;
+	const char* look_south_livingroom;
+	const char* noway;
+	const char* east_livingroom;
+	const char* south_livingroom;
+	const char* helmet_description;
+	const char* sofa_description;
 
 public:
 
